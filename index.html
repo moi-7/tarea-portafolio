@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/ico.svg" type="image/x-icon" />
+  <link rel="preload" href="assets/fonts/inter.ttf" as="font" type="font/ttf">
+  <link rel="preload" href="assets/fonts/poppins.ttf" as="font" type="font/ttf">
+  <link rel="stylesheet" href="style.css" />
+  <title>Portafolio</title>
+</head>
+
+<body>
+  <header id="inicio">
+    <input type="checkbox" name="interruptor_hamburguesa" id="interruptor_hamburguesa" hidden></input>
+
+  <div class="c_hamburguesa">
+    <label for="interruptor_hamburguesa">
+      <img role="img" src="./assets/hamburguesa.svg" aria-label="hidden"></img>
+    </label>
+  </div>
+
+    <nav class="barra_navegacion">
+      <div class="c_cerrar">
+        <label for="interruptor_hamburguesa">
+          <img role="img" src="./assets/cerrar.svg" aria-label="hidden"></img>
+        </label>
+    </div>
+
+      <ul class="enlaces">
+        <li><a href="biografia" tabindex="0">Biografía</a></li>
+        <li><a href="tecnologia" tabindex="0">Lenguajes y tecnología</a></li>
+        <li><a href="portafolio" tabindex="0">Portafolio</a></li>
+        <li><a href="contacto" tabindex="0">Contacto</a></li>
+      </ul>
+    </nav>
+
+
+
+    <section class="c_banner">
+      <div class="c_video_banner">
+        <video src="./assets/squares_dark.mp4" autoplay loop muted></video>
+      </div>
+
+      <div class="c_perfil">
+        <div class="c_foto_perfil">
+          <img role="img" src="./assets/foto-perfil.webp" alt="foto de perfil del developer"></img>
+        </div>
+        <h1 class="titulo_perfil">Moisés Sevilla</h1>
+        <p class="texto_perfil">Desarrollador Web</p>
+      </div>
+
+    </section>
+
+  </header>
+
+  <main>
+    <article id="biografia">
+      <h2 class="titulo_biografia">Acerca de mi</h2>
+      <p class="texto_biografia">Hola mi nombre es Moisés, me da mucho gusto verte por acá. Me especializo en la creación de páginas web responsivas y accesibles. </p>
+      <!-- <p>Si tienes un proyecto en mente me daría gusto colaborar.</p> -->
+    </article>
+
+    <section id="tecnologia">
+      <h2 class="titulo_tecnologia">Lenguajes y tecnología</h2>
+
+      <div class="c_html_tecnologia">
+        <p class="texto_html">HTML</p>
+        <progress role="progressbar" max="100" value="80"></progress>
+      </div>
+
+      <div class="c_css_tecnologia">
+        <p class="texto_html">CSS</p>
+        <progress role="progressbar" max="100" value="95"></progress>
+      </div>
+
+      <div class="c_javascript_tecnologia">
+        <p class="texto_javascript">Javascript</p>
+        <progress role="progressbar" max="100" value="15"></progress>
+      </div>
+
+      <div class="c_node_tecnologia">
+        <p class="texto_node">Node.js</p>
+        <progress role="progressbar" max="100" value="10"></progress>
+      </div>
+
+      <div class="c_prompting_tecnologia">
+        <p class="texto_prompting">Prompting enginering</p>
+        <progress role="progressbar" max="100" value="100"></progress>
+      </div>
+    </section>
+
+    <section id="portafolio">
+
+      <h2 class="titulo_portafolio">Portafolio</h2>
+
+      <article class="proyecto_1">
+        <h2 class="titulo_proyecto_1">Proyecto #1</h2>
+        <div class="c_imagen_proyecto_1 c-degradado">
+          <img role="img" src="" alt=""></img>
+          <a href="" class="boton_proyecto_1 boton" tabindex="0">Repositorio</a>
+        </div>
+        <p class="texto_proyecto_1">Anagrama</p>
+      </article>
+
+      <article class="proyecto_2">
+        <h2 class="titulo_proyecto_2">Proyecto #2</h2>
+        <div class="c_imagen_proyecto_2 c-degradado">
+          <img role="img" src="" alt=""></img>
+          <a href="" class="boton_proyecto_2 boton" tabindex="0">Repositorio</a>
+        </div>
+        <p class="texto_proyecto_2">Neobrutalismo todo's</p>
+      </article>
+
+
+      <article class="proyecto_3">
+        <h2 class="titulo_proyecto_3">Proyecto #3</h2>
+        <div class="c_imagen_proyecto_3 c-degradado">
+          <img role="img" src="" alt=""></img>
+          <p class="texto_proyecto_3">Backend CRUD app</p>
+          <a href="" class="boton_proyecto_3 boton" tabindex="0">Repositorio</a>
+        </div>
+      </article>
+
+      <article class="proyecto_4">
+        <h2 class="titulo_proyecto_4">Proyecto #4</h2>
+        <div class="c_imagen_proyecto_4 c-degradado">
+          <img role="img" src="" alt=""></img>
+          <a href="" class="boton_proyecto_4 boton" tabindex="0">Vista Previa</a>
+        </div>
+        <p class="texto_proyecto_4">Capsulas Full Stack</p>
+      </article>
+    </section>
+
+    <section id="contacto">
+      <h2 class="contacto_titulo">¿Quieres empezar un proyecto?</h2>
+      <p>Manda un mensaje y me pondre en contacto contigo</p>
+      <form action="post">
+        <label for="name">Nombre</label>
+        <input type="text" name="nombre" id="nombre" required></input>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required></input>
+
+        <label for="telefono">Teléfono</label>
+        <input type="tel" name="telefono" id="telefono" required></input>
+      </form>
+    </section>
+
+  </main>
+
+  <footer id="pie_de_pagina">
+    <nav class="c_sociales">
+      <ul>
+        <li><a href="#">Linkedin</a></li>
+        <li><a href="#">Github</a></li>
+        <li><a href="#">X</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+</body>
+
+</html>
