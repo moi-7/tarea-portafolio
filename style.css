@@ -2,7 +2,7 @@
   /* 🎨 Paleta de colores */
   --color-bgw: #f7f7f7;
   --color-bgd: #262a31;
-  --color-bgs: lightsalmon;
+  --color-bgs: rgb(255, 160, 122);
   --color-text: #111111;
   --color-text-alt: #f0f0f0;
   --color-primary-hover: #99bb93;
@@ -104,11 +104,13 @@ ul {
 h1 {
   font-family: var(--font-family-headings);
   font-size: clamp(var(--font-size-md), 4vw, var(--fon-size-xlg));
+  font-weight: normal;
 }
 
 h2 {
   font-family: var(--font-family-headings);
   font-size: clamp(var(--font-size-base), 4vw, var(--font-size-lg));
+   font-weight: normal;
 }
 
 p {
@@ -353,26 +355,103 @@ progress[value]::-webkit-progress-value {
   }
 }
 
+.contacto_titulo{
+  margin-block: var(--space-sm);
+  text-align: center;
+}
 
+.contacto_texto{
+  padding: 0 var(--space-lg);
+  margin-block-end: var(--space-sm);
+}
 
+.c_form{
+  padding-inline: var(--space-sm);
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  height: max-content;
+  padding: var(--space-md);
+  background-color: var(--color-bgd);
+  color: var(--color-bgw);
+  border-radius: var(--radius);
+}
+
+#nombre,
+#email,
+#telefono {
+  color: var(--grey);
+  padding: .7rem 1rem;
+  border-radius: var(--btn_radius);
+  border: none;
+  outline: .1rem solid color(prophoto-rgb 0 0 0 / 20%);
+
+  &::placeholder{
+    color: color(prophoto-rgb 0 0 0 / 20%);
+  }
+
+  &:focus-visible{
+    color: color(display-p3 0 0 0 / 40%);
+    outline: .2rem solid var(--color-bgs);
+    border: none;
+  }
+}
+
+textarea{
+ font-family: 'Times New Roman';
+ font-size: var(--font-size-sm);
+ margin-block-start: var(--space-sm);
+}
+
+#boton_contacto {
+  padding: var(--space-sm) var(--space-lg);
+  margin-block-start: var(--space-sm);
+  margin-inline: auto;
+  border: var(--color-text);
+  border-radius: var(--btn_radius);
+  box-shadow: var(--shadow);
+  transition: all .3s ease-in-out;
+  font-size: clamp(var(--font-size-xsm), 4vw, var(--font-size-base));
+
+  &:hover {
+    background-color: var(--color-bgs);
+    color: var(--color-text-alt);
+  }
+}
+
+.sociales{
+  max-width: 100%;
+}
+
+.c_enlaces_sociales{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-lg);
+  gap: 0 var(--space-md);
+}
 
 
 /*=============================
           Animaciones
 ===============================*/
-
 #biografia, #tecnologia, #portafolio, #contacto{
-  animation: fade-in linear backwards;
+  animation: fade-in linear;
   /* animation-timeline: view(500px 10px); */
 }
 
 @keyframes fade-in {
   from{
     opacity: 0;
+    transform: translateX(-100%);
   }
 
   to{
     opacity: 1;
+    transform: translateX(0);
   }
 }
 

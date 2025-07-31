@@ -77,12 +77,17 @@
 
       <div class="c_javascript_tecnologia">
         <p class="texto_javascript">Javascript</p>
-        <progress role="progressbar" max="100" value="15"></progress>
+        <progress role="progressbar" max="100" value="7"></progress>
       </div>
 
       <div class="c_node_tecnologia">
         <p class="texto_node">Node.js</p>
-        <progress role="progressbar" max="100" value="10"></progress>
+        <progress role="progressbar" max="100" value="7"></progress>
+      </div>
+
+      <div class="c_ux_ui">
+        <p class="texto_ux_ui">UX & UI</p>
+        <progress role="progressbar" max="100" value="15"></progress>
       </div>
 
       <div class="c_prompting_tecnologia">
@@ -133,26 +138,36 @@
       </article>
     </section>
 
-    <section id="contacto" style="outline: var(--debug);">
+    <section id="contacto">
       <h2 class="contacto_titulo">¿Quieres empezar un proyecto?</h2>
-      <p>Manda un mensaje y me pondre en contacto contigo</p>
-      <form action="post">
-        <label for="name">Nombre</label>
-        <input type="text" name="nombre" id="nombre" required></input>
+      <p class="contacto_texto">Manda un mensaje y me pondre en contacto contigo</p>
 
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" required></input>
+      <div class="c_form">
+        <form action="post">
+          <label for="name">Nombre</label>
+         <input type="text" name="nombre" id="nombre" required placeholder="Ada Wong" tabindex="0"></input>
 
-        <label for="telefono">Teléfono</label>
-        <input type="tel" name="telefono" id="telefono" required></input>
-      </form>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required placeholder="Ada@umbrella.corp" tabindex="0"></input>
+
+          <label for="telefono">Teléfono</label>
+          <input type="tel" name="telefono" id="telefono" required placeholder="+506 8888  8888" inputmode="numeric" pattern="[0-9]*" tabindex="0"></input>
+
+          <label for="mensaje"></label>
+          <textarea name="mensaje" id="mensaje" draggable="auto" spellcheck="true"></textarea>
+
+          <label for="boton"></label>
+          <input type="submit" name="boton" id="boton_contacto" required tabindex="0"></input>
+        </form>
+      </div>
+
     </section>
 
   </main>
 
   <footer id="pie_de_pagina">
-    <nav class="c_sociales">
-      <ul>
+    <nav class="sociales">
+      <ul class="c_enlaces_sociales">
         <li><a href="#">Linkedin</a></li>
         <li><a href="#">Github</a></li>
         <li><a href="#">X</a></li>
