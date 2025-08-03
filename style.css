@@ -154,9 +154,9 @@ p {
   display: flex;
   justify-content: flex-end;
   position: fixed;
-  animation: desplazar_-x ease;
+  animation: desplazar_-x ease-in-out;
   animation-timeline: scroll(root);
-  animation-range: 0px 400px;
+  animation-range: 100px 400px;
   animation-fill-mode: forwards;
 }
 
@@ -493,21 +493,21 @@ textarea{
 @keyframes desplazar_-x {
   0% {
     scale: 0;
-    transform: translateX(0);
+    transform: translateX(0vw);
   }
 
     50% {
     scale: .5;
-    transform: translateX(-136%);
+    transform: translateX(-140vw);
   }
 
     75% {
     scale: .7;
-    transform: translateX(28%);
+    transform: translateX(26vw);
   }
 
     100% {
      scale: 1;
-     transform: translateX(-85%);
+     transform: translateX(-88vw);
   }
 }
