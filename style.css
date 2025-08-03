@@ -20,6 +20,12 @@
   --font-size-lg: 3.2rem;
   --fon-size-xlg: 4.8rem;
 
+  --fluid-font-size-small: clamp(
+    var(--font-size-xsm),
+    4vw,
+    var(--font-size-md)
+  );
+
   /* 📐 Espacio */
   --space-xs: .5rem;
   --space-sm: 1rem;
@@ -34,6 +40,10 @@
   --vertical-area: .1rem;
   --horizontal-area: .1rem;
   --debug: 1px solid red;
+    --gradient: linear-gradient(
+    to bottom in oklab,
+    oklch(0% 0.00 340 / 50%) 0%, 100%, oklch(0% 0.00 200 / 50%) 0% 0%
+  );
 }
 
 /* Fuentes locales */
@@ -118,67 +128,89 @@ p {
   font-size: clamp(var(--font-size-sm), 4vw, var(--font-size-md));
 }
 
+#sidebar{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  transform: translateX(100%);
+  background: linear-gradient(to bottom, #00000080 0%, 100%, #00000080 0% 0%);
+  background: var(--gradient);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#sidebar:target {
+  transform: translateX(0);
+}
 
 .c_hamburguesa{
   width: 100%;
   z-index: 2;
-  position: absolute;
   padding: var(--space-md);
-
-  & img{
-    margin-left: auto;
-  }
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  animation: desplazar_-x ease;
+  animation-timeline: scroll(root);
+  animation-range: 0px 400px;
+  animation-fill-mode: forwards;
 }
 
-#interruptor_hamburguesa:checked~.barra_navegacion{
-  transform: translateX(0);
-}
 
-.c_hamburguesa img{
-  background-color: lightsalmon;
-}
-
-.c_hamburguesa img, .c_cerrar img{
-  width: calc(var(--horizontal-area) * 35);
-  height: calc(var(--vertical-area) * 35);
+.c_hamburguesa img {
+  width: calc(var(--horizontal-area) * 25);
+  height: calc(var(--vertical-area) * 25);
   border-radius: var(--radius);
-}
-
-.c_cerrar{
-  width: 100%;
-
-  img{
-    margin: 0 auto;
+  background-color: #7c6462;
+  &:hover {
     background-color: var(--color-bgs);
   }
 }
 
 .barra_navegacion {
-  height: 100vh;
-  position: fixed;
-  right: 0;
-  z-index: 2;
+  height: 100%;
   background-color: var(--color-bgd);
-  padding: var(--space-sm);
   z-index: 3;
-  transform: translateX(100%);
-  transition: transform .3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-md);
+}
+/* .c_hamburguesa img, .c_cerrar img{
+  width: calc(var(--horizontal-area) * 35);
+  height: calc(var(--vertical-area) * 35);
+  border-radius: var(--radius);
+} */
+
+.c_cerrar{
+  width: 100%;
+  text-align: center;
 }
 
+.c_cerrar img {
+  width: calc(var(--horizontal-area) * 35);
+  height: calc(var(--vertical-area) * 35);
+  border-radius: var(--radius);
+  background-color: var(--color-bgs);
+}
 
 .enlaces {
-  height: 100%;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  margin-top: calc(45vh - var(--space-lg));
-  gap: var(--space-sm);
+  gap: var(--space-sm) 0;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .enlaces a {
-  font-size: var(--font-size-base);
   color: var(--color-text-alt);
   border-bottom: var(--horizontal-area) dotted var(--color-bgs);
+  font-size: clamp();
 
   &:hover {
     color: var(--color-bgs);
@@ -187,8 +219,6 @@ p {
     outline: var(--color-bgs);
   }
 }
-
-
 
 .c_banner {
   max-width: 100%;
@@ -327,7 +357,6 @@ progress[value]::-webkit-progress-value {
 
 .c-degradado{
   position: relative;
-  outline: var(--debug);
 }
 
 .c.degradado::before {
@@ -458,5 +487,27 @@ textarea{
 
   to{
     opacity: 1;
+  }
+}
+
+@keyframes desplazar_-x {
+  0% {
+    scale: 0;
+    transform: translateX(0);
+  }
+
+    50% {
+    scale: .5;
+    transform: translateX(-136%);
+  }
+
+    75% {
+    scale: .7;
+    transform: translateX(28%);
+  }
+
+    100% {
+     scale: 1;
+     transform: translateX(-85%);
   }
 }
