@@ -156,7 +156,7 @@ p {
   position: fixed;
   animation: desplazar_-x ease-in-out;
   animation-timeline: scroll(root);
-  animation-range: 100px 400px;
+  animation-range: 150px 610px;
   animation-fill-mode: forwards;
 }
 
@@ -180,11 +180,6 @@ p {
   justify-content: center;
   padding: var(--space-md);
 }
-/* .c_hamburguesa img, .c_cerrar img{
-  width: calc(var(--horizontal-area) * 35);
-  height: calc(var(--vertical-area) * 35);
-  border-radius: var(--radius);
-} */
 
 .c_cerrar{
   width: 100%;
@@ -286,10 +281,6 @@ p {
   margin-bottom: var(--space-sm);
 }
 
-.titulo_perfil,
-.texto_perfil {
-  text-shadow: 2rem black; /* Necesita arreglo */
-}
 
 #biografia{
   text-align: center;
@@ -350,46 +341,17 @@ progress[value]::-webkit-progress-value {
 #portafolio img{
   max-width: 80%;
   aspect-ratio: 16 / 9;
-  border: var(--border);
   margin-inline: auto;
+  margin-block: var(--space-md);
   box-shadow: var(--shadow);
-}
-
-.c-degradado{
-  position: relative;
-}
-
-.c.degradado::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9;
-  background: oklab(100% 0 -0.00011);
-  background: linear-gradient(180deg, oklch(100% 0.00011 271.152 / 0) 40%, oklab(0% 0 0 / 0.39) 85%);
-  background-color: red;
-}
-
-.boton {
-  padding: var(--space-sm) var(--space-md);
-  border: var(--color-text);
-  border-radius: var(--btn_radius);
-  box-shadow: var(--shadow);
-  transition: hover .3s ease-in-out;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  transition: all .3s ease-in-out;
-  font-size: clamp(var(--font-size-xsm), 4vw, var(--font-size-base));
+  transition: transform .3s ease-in-out;
 
   &:hover {
-    background-color: var(--color-bgs);
-    color: var(--color-text-alt);
+    box-shadow: var(--shadow);
+    transform: scale(.9);
   }
 }
+
 
 .contacto_titulo{
   margin-block: var(--space-sm);
