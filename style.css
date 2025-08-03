@@ -154,8 +154,8 @@ p {
 }
 
 .barra_navegacion {
-  height: 100%;
-  position: absolute;
+  height: 100vh;
+  position: fixed;
   right: 0;
   z-index: 2;
   background-color: var(--color-bgd);
@@ -165,6 +165,7 @@ p {
   transition: transform .3s ease-in-out;
 }
 
+
 .enlaces {
   height: 100%;
   display: flex;
@@ -172,18 +173,22 @@ p {
   align-items: center;
   margin-top: calc(45vh - var(--space-lg));
   gap: var(--space-sm);
+}
 
-  a {
-    font-size: var(--font-size-base);
-    color: var(--color-text-alt);
-    border-bottom: var(--horizontal-area) dotted var(--color-bgs);
+.enlaces a {
+  font-size: var(--font-size-base);
+  color: var(--color-text-alt);
+  border-bottom: var(--horizontal-area) dotted var(--color-bgs);
 
-    
-  }
-  &:hover{
+  &:hover {
     color: var(--color-bgs);
+}
+  &:focus-visible {
+    outline: var(--color-bgs);
   }
 }
+
+
 
 .c_banner {
   max-width: 100%;
@@ -314,7 +319,7 @@ progress[value]::-webkit-progress-value {
 
 #portafolio img{
   max-width: 80%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 16 / 9;
   border: var(--border);
   margin-inline: auto;
   box-shadow: var(--shadow);
@@ -322,6 +327,7 @@ progress[value]::-webkit-progress-value {
 
 .c-degradado{
   position: relative;
+  outline: var(--debug);
 }
 
 .c.degradado::before {
@@ -331,9 +337,10 @@ progress[value]::-webkit-progress-value {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 9;
   background: oklab(100% 0 -0.00011);
   background: linear-gradient(180deg, oklch(100% 0.00011 271.152 / 0) 40%, oklab(0% 0 0 / 0.39) 85%);
+  background-color: red;
 }
 
 .boton {
@@ -404,6 +411,7 @@ textarea{
  font-family: 'Times New Roman';
  font-size: var(--font-size-sm);
  margin-block-start: var(--space-sm);
+ resize: both;
 }
 
 #boton_contacto {
@@ -446,12 +454,9 @@ textarea{
 @keyframes fade-in {
   from{
     opacity: 0;
-    transform: translateX(-100%);
   }
 
   to{
     opacity: 1;
-    transform: translateX(0);
   }
 }
-

@@ -13,39 +13,43 @@
 
 <body>
   <header id="inicio">
-    <input type="checkbox" name="interruptor_hamburguesa" id="interruptor_hamburguesa" hidden></input>
+    <input type="checkbox" name="interruptor_hamburguesa" id="interruptor_hamburguesa" hidden>
 
   <div class="c_hamburguesa">
-    <label for="interruptor_hamburguesa">
-      <img role="img" src="./assets/hamburguesa.svg" aria-label="hidden"></img>
+    <label for="interruptor_hamburguesa" aria-label="Abrir menú de navegación">
+      <img src="./assets/hamburguesa.svg" alt="Menú" role="button">
     </label>
   </div>
 
+  <aside>
     <nav class="barra_navegacion">
       <div class="c_cerrar">
-        <label for="interruptor_hamburguesa">
-          <img role="img" src="./assets/cerrar.svg" aria-label="hidden"></img>
+        <label for="interruptor_hamburguesa" aria-label="Cerrar menú de navegación">
+          <img src="./assets/cerrar.svg" alt="Cerrar" role="button">
         </label>
-    </div>
-
+      </div>
+  
       <ul class="enlaces">
-        <li><a href="biografia" tabindex="0">Biografía</a></li>
-        <li><a href="tecnologia" tabindex="0">Lenguajes y tecnología</a></li>
-        <li><a href="portafolio" tabindex="0">Portafolio</a></li>
-        <li><a href="contacto" tabindex="0">Contacto</a></li>
+        <li tabindex="0"><a href="#biografia">Biografía</a></li>
+        <li tabindex="0"><a href="#tecnologia">Lenguajes y tecnología</a></li>
+        <li tabindex="0"><a href="#portafolio">Portafolio</a></li>
+        <li tabindex="0"><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
-
+  </aside>
 
 
     <section class="c_banner">
       <div class="c_video_banner">
-        <video src="./assets/squares_dark.mp4" autoplay loop muted></video>
+        <video autoplay loop muted playsinline preload="metadata">
+          <source src="assets/squares_dark.mp4" type="video/mp4">
+          <source src="assets/squares_dark.webm" type="video/webm">
+        </video>
       </div>
 
       <div class="c_perfil">
         <div class="c_foto_perfil">
-          <img role="img" src="./assets/foto-perfil.webp" alt="foto de perfil del developer"></img>
+          <img src="./assets/foto-perfil.webp" alt="foto de perfil del developer">
         </div>
         <h1 class="titulo_perfil">Moisés Sevilla</h1>
         <p class="texto_perfil">Desarrollador Web</p>
@@ -59,7 +63,6 @@
     <article id="biografia">
       <h2 class="titulo_biografia">Acerca de mi</h2>
       <p class="texto_biografia">Hola mi nombre es Moisés, me da mucho gusto verte por acá. Me especializo en la creación de páginas web responsivas y accesibles. </p>
-      <!-- <p>Si tienes un proyecto en mente me daría gusto colaborar.</p> -->
     </article>
 
     <section id="tecnologia">
@@ -67,32 +70,32 @@
 
       <div class="c_html_tecnologia">
         <p class="texto_html">HTML</p>
-        <progress role="progressbar" max="100" value="80"></progress>
+        <progress max="100" value="80"></progress>
       </div>
 
       <div class="c_css_tecnologia">
         <p class="texto_html">CSS</p>
-        <progress role="progressbar" max="100" value="95"></progress>
+        <progress max="100" value="95"></progress>
       </div>
 
       <div class="c_javascript_tecnologia">
         <p class="texto_javascript">Javascript</p>
-        <progress role="progressbar" max="100" value="7"></progress>
+        <progress max="100" value="7"></progress>
       </div>
 
       <div class="c_node_tecnologia">
         <p class="texto_node">Node.js</p>
-        <progress role="progressbar" max="100" value="7"></progress>
+        <progress max="100" value="7"></progress>
       </div>
 
       <div class="c_ux_ui">
         <p class="texto_ux_ui">UX & UI</p>
-        <progress role="progressbar" max="100" value="15"></progress>
+        <progress max="100" value="15"></progress>
       </div>
 
       <div class="c_prompting_tecnologia">
-        <p class="texto_prompting">Prompting enginering</p>
-        <progress role="progressbar" max="100" value="100"></progress>
+        <p class="texto_prompting">Ingienería de Prompt</p>
+        <progress max="100" value="80"></progress>
       </div>
     </section>
 
@@ -103,7 +106,7 @@
       <article class="proyecto_1">
         <h2 class="titulo_proyecto_1">Proyecto #1</h2>
         <div class="c_imagen_proyecto_1 c-degradado">
-          <img role="img" src="" alt=""></img>
+          <img src="" alt="">
           <a href="" class="boton_proyecto_1 boton" tabindex="0">Repositorio</a>
         </div>
         <p class="texto_proyecto_1">Anagrama</p>
@@ -112,7 +115,7 @@
       <article class="proyecto_2">
         <h2 class="titulo_proyecto_2">Proyecto #2</h2>
         <div class="c_imagen_proyecto_2 c-degradado">
-          <img role="img" src="" alt=""></img>
+          <img src="" alt="">
           <a href="" class="boton_proyecto_2 boton" tabindex="0">Repositorio</a>
         </div>
         <p class="texto_proyecto_2">Neobrutalismo todo's</p>
@@ -122,7 +125,7 @@
       <article class="proyecto_3">
         <h2 class="titulo_proyecto_3">Proyecto #3</h2>
         <div class="c_imagen_proyecto_3 c-degradado">
-          <img role="img" src="" alt=""></img>
+          <img src="" alt="">
           <p class="texto_proyecto_3">Backend CRUD app</p>
           <a href="" class="boton_proyecto_3 boton" tabindex="0">Repositorio</a>
         </div>
@@ -131,7 +134,7 @@
       <article class="proyecto_4">
         <h2 class="titulo_proyecto_4">Proyecto #4</h2>
         <div class="c_imagen_proyecto_4 c-degradado">
-          <img role="img" src="" alt=""></img>
+          <img src="assets/capsule.webp" alt="">
           <a href="" class="boton_proyecto_4 boton" tabindex="0">Vista Previa</a>
         </div>
         <p class="texto_proyecto_4">Capsulas Full Stack</p>
@@ -145,19 +148,19 @@
       <div class="c_form">
         <form action="post">
           <label for="name">Nombre</label>
-         <input type="text" name="nombre" id="nombre" required placeholder="Ada Wong" tabindex="0"></input>
+         <input type="text" name="nombre" id="nombre" required placeholder="Ada Wong" tabindex="0">
 
           <label for="email">Email</label>
-          <input type="email" name="email" id="email" required placeholder="Ada@umbrella.corp" tabindex="0"></input>
+          <input type="email" name="email" id="email" required placeholder="Ada@umbrella.corp" tabindex="0">
 
           <label for="telefono">Teléfono</label>
-          <input type="tel" name="telefono" id="telefono" required placeholder="+506 8888  8888" inputmode="numeric" pattern="[0-9]*" tabindex="0"></input>
+          <input type="tel" name="telefono" id="telefono" required placeholder="+506 8888  8888" inputmode="numeric" pattern="[0-9]*" tabindex="0">
 
           <label for="mensaje"></label>
-          <textarea name="mensaje" id="mensaje" draggable="auto" spellcheck="true"></textarea>
+          <textarea name="mensaje" id="mensaje" spellcheck="true" cols="5" rows="5"></textarea>
 
           <label for="boton"></label>
-          <input type="submit" name="boton" id="boton_contacto" required tabindex="0"></input>
+          <input type="submit" name="boton" id="boton_contacto" required tabindex="0">
         </form>
       </div>
 

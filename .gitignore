@@ -41,3 +41,6 @@ build/
 
 # git files
 .git/
+
+#markdown files
+*.md
