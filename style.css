@@ -7,20 +7,22 @@
   --color-text-alt: #f0f0f0;
   --color-primary-hover: #99bb93;
   --color-muted: #6b9d62;
-  --color-outline: #dddddd;
 
 
   /* ✍️ Tipografía */
   --font-family-text: 'inter', sans-serif;
-  --font-family-headings: 'poppins', sans-serif;
-  --font-size-base: 1.6rem;
+  --font-family-headings: 'poppins-bold', sans-serif;
+  --font-family-subheadings: 'poppins', sans-serif;
   --font-size-xsm: 1rem;
   --font-size-sm: 1.4rem;
+  --font-size-base: 1.6rem;
   --font-size-md: 2.2rem;
   --font-size-lg: 3.2rem;
   --fon-size-xlg: 4.8rem;
 
-  --fluid-font-size-small: clamp(var(--font-size-xsm), 4vw, var(--font-size-md));
+  --fluid-font-size-small: clamp(var(--font-size-xsm), 4vw, var(--font-size-base));
+  --fluid-font-size-base: clamp(var(--font-size-base), 4vw, var(--font-size-md));
+  --fluid-font-size-large: clamp(var(--font-size-md), 4vw, var(--font-size-lg));
 
   /* 📐 Espacio */
   --space-xs: .5rem;
@@ -30,13 +32,13 @@
 
   /* 🧱 Extras */
   --btn_radius: 100vmax;
-  --radius: .5rem;
-  --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --rounded-corners: .5rem;
+  --shadow: 0 .2rem .5rem rgba(0, 0, 0, 0.1);
   --border: .1rem solid rgba(0, 0, 0, 0.5);
   --vertical-area: .1rem;
   --horizontal-area: .1rem;
-  --debug: 1px solid red;
-    --gradient: linear-gradient(
+  --debug: .1rem solid red;
+  --fade-overlay: linear-gradient(
     to bottom in oklab,
     oklch(0% 0.00 340 / 50%) 0%, 100%, oklch(0% 0.00 200 / 50%) 0% 0%
   );
@@ -51,7 +53,13 @@
 
 @font-face {
   font-family: "poppins";
-  src: url("assets/fonts/poppins.ttf") format("truetype");
+  src: url("assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "poppins-bold";
+  src: url("assets/fonts/poppins-bold.ttf") format("truetype");
   font-display: swap;
 }
 
@@ -133,7 +141,7 @@ p {
   z-index: 2;
   transform: translateX(100%);
   background: linear-gradient(to bottom, #00000080 0%, 100%, #00000080 0% 0%);
-  background: var(--gradient);
+  background: var(--fade-overlay);
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -160,7 +168,7 @@ p {
 .c_hamburguesa img {
   width: calc(var(--horizontal-area) * 25);
   height: calc(var(--vertical-area) * 25);
-  border-radius: var(--radius);
+  border-radius: var(--rounded-corners);
   background-color: var(--color-bgs);
   &:hover {
     background-color: var(--color-bgs);
@@ -185,7 +193,7 @@ p {
 .c_cerrar img {
   width: calc(var(--horizontal-area) * 35);
   height: calc(var(--vertical-area) * 35);
-  border-radius: var(--radius);
+  border-radius: var(--rounded-corners);
   background-color: var(--color-bgs);
 }
 
@@ -377,7 +385,7 @@ form{
   padding: var(--space-md);
   background-color: var(--color-bgd);
   color: var(--color-bgw);
-  border-radius: var(--radius);
+  border-radius: var(--rounded-corners);
 }
 
 #nombre,
@@ -455,13 +463,14 @@ footer {
 .c_sociales img {
   width: calc(var(--horizontal-area) * 30);
   height: calc(var(--vertical-area) * 30);
-  border-radius: var(--radius);
+  border-radius: var(--rounded-corners);
   background-color: var(--color-bgs);
   transition: transform .3s ease-in-out;
 
   &:hover {
     transform: scale(1.1);
     box-shadow: var(--shadow);
+    background-color: var(--color-bgw);
   }
 }
 
