@@ -530,6 +530,15 @@ footer {
     width: calc(var(--horizontal-area) * 140);
     height: calc(var(--vertical-area) * 140);
   }
+
+  .c_hamburguesa img {
+    width: calc(var(--horizontal-area) * 35);
+    height: calc(var(--vertical-area) * 35);
+  }
+  .c_cerrar img {
+    width: calc(var(--horizontal-area) * 35);
+    height: calc(var(--vertical-area) * 35);
+  }
 }
 
 @media(min-width: 801px) {
@@ -578,7 +587,8 @@ footer {
     }
   }
   .c_form{
-    padding: 0 calc(var(--space-lg) * 8);
+    width: 50%;
     margin-block-start: var(--space-lg);
+    margin-inline: auto;
   }
 }
