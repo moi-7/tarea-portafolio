@@ -53,7 +53,7 @@
 
 @font-face {
   font-family: "poppins";
-  src: url("assets/fonts/Poppins-Regular.ttf") format("truetype");
+  src: url("assets/fonts/poppins-Regular.ttf") format("truetype");
   font-display: swap;
 }
 
@@ -76,7 +76,7 @@
 
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
   overflow-x: clip;
 }
 
@@ -117,19 +117,17 @@ ul {
 
 h1 {
   font-family: var(--font-family-headings);
-  font-size: clamp(var(--font-size-md), 4vw, var(--fon-size-xlg));
-  font-weight: normal;
+  font-size: var(--fluid-font-size-large);
 }
 
 h2 {
-  font-family: var(--font-family-headings);
-  font-size: clamp(var(--font-size-base), 4vw, var(--font-size-lg));
-   font-weight: normal;
+  font-family: var(--font-family-subheadings);
+  font-size: var(--fluid-font-size-base);
 }
 
 p {
   font-family: var(--font-family-text);
-  font-size: clamp(var(--font-size-sm), 4vw, var(--font-size-md));
+  font-size: var(--fluid-font-size-small);
 }
 
 #sidebar{
@@ -260,27 +258,6 @@ p {
   margin: 0 auto;
 }
 
-@media(min-width: 500px) and (max-width: 620px) {
-  .c_foto_perfil img {
-    width: calc(var(--horizontal-area) * 120);
-    height: calc(var(--vertical-area) * 120);
-  }
-}
-
-@media(min-width: 501px) and (max-width: 800px) {
-  .c_foto_perfil img {
-    width: calc(var(--horizontal-area) * 140);
-    height: calc(var(--vertical-area) * 140);
-  }
-}
-
-@media(min-width: 801px) {
-  .c_foto_perfil img {
-    width: calc(var(--horizontal-area) * 200);
-    height: calc(var(--vertical-area) * 200);
-  }
-}
-
 .c_foto_perfil{
   margin-bottom: var(--space-sm);
 }
@@ -318,20 +295,28 @@ p {
   -webkit-appearance: none;
   appearance: none;
   -moz-appearance: none;
-  border: var(--border);
+  animation: progreso 2s ease-out forwards;
+  transform-origin: left;
+  animation-timeline: view(); 
+  animation-range: 10px 350px;
+  animation-fill-mode: forwards;
 }
 
 #tecnologia progress[value]::-webkit-progress-bar {
   --_grey: #dcdcdc;
   background-color: var(--_grey);
+  border-radius: var(--rounded-corners);
+  
 }
 
 progress[value]::-webkit-progress-value {
   background-color: var(--color-bgs);
+  border-radius: var(--rounded-corners);
 }
 
 progress::-moz-progress-bar {
   background-color: var(--color-bgs);
+  border-radius: var(--rounded-corners);
 }
 
 #portafolio{
@@ -380,12 +365,16 @@ progress::-moz-progress-bar {
 form{
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: var(--space-sm);
   height: max-content;
   padding: var(--space-md);
   background-color: var(--color-bgd);
   color: var(--color-bgw);
   border-radius: var(--rounded-corners);
+
+  label{
+    align-self: flex-start;
+  }
 }
 
 #nombre,
@@ -457,7 +446,7 @@ footer {
   height: calc(var(--vertical-area) * 1);
   flex: 1 0 auto;
   background-color: var(--color-bgs);
-  align-self: flex-end;
+  align-self: center;
 }
 
 .c_sociales img {
@@ -494,21 +483,6 @@ footer {
 /*=============================
           Animaciones
 ===============================*/
-#biografia, #tecnologia, #portafolio, #contacto{
-  animation: fade-in linear;
-  /* animation-timeline: view(500px 10px); */
-}
-
-@keyframes fade-in {
-  from{
-    opacity: 0;
-  }
-
-  to{
-    opacity: 1;
-  }
-}
-
 @keyframes desplazar_-x {
   0% {
     scale: 0;
@@ -528,5 +502,83 @@ footer {
     100% {
      scale: 1;
      transform: translateX(-88vw);
+  }
+}
+
+@keyframes progreso {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/*=============================
+          Media Queries
+===============================*/
+
+@media(min-width: 500px) and (max-width: 620px) {
+  .c_foto_perfil img {
+    width: calc(var(--horizontal-area) * 120);
+    height: calc(var(--vertical-area) * 120);
+  }
+}
+
+@media(min-width: 620px) and (max-width: 800px) {
+  .c_foto_perfil img {
+    width: calc(var(--horizontal-area) * 140);
+    height: calc(var(--vertical-area) * 140);
+  }
+}
+
+@media(min-width: 801px) {
+  .c_foto_perfil img {
+    width: calc(var(--horizontal-area) * 200);
+    height: calc(var(--vertical-area) * 200);
+  }
+
+  .c_hamburguesa{
+    animation-range: 150px 600px;
+  }
+
+  .c_hamburguesa img {
+    width: calc(var(--horizontal-area) * 40);
+    height: calc(var(--vertical-area) * 40);
+  }
+  .c_cerrar img {
+    width: calc(var(--horizontal-area) * 40);
+    height: calc(var(--vertical-area) * 40);
+  }
+
+  @keyframes desplazar_-x {
+    0% {
+      scale: 0;
+      transform: translateX(0vw);
+    }
+
+    50% {
+      scale: .5;
+      transform: translateX(-145vw);
+    }
+
+    75% {
+      scale: .7;
+      transform: translateX(23vw);
+    }
+
+    90% {
+      scale: .9;
+      transform: translateX(-100vw);
+    }
+
+    100% {
+      scale: 1;
+      transform: translateX(-92vw);
+    }
+  }
+  .c_form{
+    padding: 0 calc(var(--space-lg) * 8);
+    margin-block-start: var(--space-lg);
   }
 }
